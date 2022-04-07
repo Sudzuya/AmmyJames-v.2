@@ -41,4 +41,27 @@ import { flsModules } from "./modules.js";
 //     console.log("Размеры элемента: " + el.clientWidth + " X " + el.clientHeight);
 //   }, false);
 
+let burger = document.querySelector('.burger')
+let dropDownMenu = document.querySelector('.mobile-menu .header__dropdown-list');
+burger.addEventListener('click', function(){
+  burger.classList.toggle('active')
+  document.body.classList.toggle('open')
+})
 
+let Alllink = document.querySelectorAll('.mobile-menu nav a')
+
+Alllink.forEach(function(e){
+  if (e.innerText !== "Информация"){
+    e.addEventListener('click', function(item){
+      document.body.classList.remove('open')
+      dropDownMenu.classList.remove('drop-open')
+    })
+  } 
+  if (e.innerText == "Информация"){
+    e.addEventListener('click', function(){
+      e.classList.toggle('open')
+      dropDownMenu.classList.toggle('drop-open')
+    })
+  }
+
+})

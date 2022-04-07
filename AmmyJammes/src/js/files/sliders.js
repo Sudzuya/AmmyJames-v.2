@@ -49,12 +49,12 @@ function initSliders() {
 			//lazy: true,
 
 			
-			// Эффекты
-			// effect: 'fade',
-			// autoplay: {
-			// 	delay: 2000,
-			// 	disableOnInteraction: false,
-			// },
+			//Эффекты
+			effect: 'fade',
+			autoplay: {
+				delay: 2000,
+				disableOnInteraction: false,
+			},
 			
 
 			// Пагинация
@@ -80,27 +80,23 @@ function initSliders() {
 			},
 
 			// Брейкпоинты
-			/*
+			
 			breakpoints: {
-				320: {
+				310: {
 					slidesPerView: 1,
 					spaceBetween: 0,
 					autoHeight: true,
 				},
-				768: {
+				576: {
 					slidesPerView: 2,
 					spaceBetween: 20,
 				},
-				992: {
+				768: {
 					slidesPerView: 3,
 					spaceBetween: 20,
 				},
-				1268: {
-					slidesPerView: 4,
-					spaceBetween: 30,
-				},
 			},
-			*/
+			
 			// События
 			on: {
 

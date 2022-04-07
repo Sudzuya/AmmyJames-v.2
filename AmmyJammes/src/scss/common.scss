@@ -1,10 +1,14 @@
 // Заголовки, общие БЄМ блоки и проче...
 h1, h2, h3, h4{
-    font-family: 'Playfair Display';
+    font-family: 'CorporateA';
     
 }
 h2{
     font-size: 45px;
+    @media (max-width:992px) {
+        @include adaptiveValue("font-size", 45, 32, 992, 320);
+    
+    }
 }
 body{
     position: relative;
@@ -13,9 +17,9 @@ input:focus-visible, textarea:focus-visible {
     outline: none;
 }
 .price{
-    font-family: 'Playfair Display';
+    font-family: 'CorporateA';
     span{
-        font-family: 'Faustina';
+        font-family: 'Alkes';
     }
 }
 .btn-white{

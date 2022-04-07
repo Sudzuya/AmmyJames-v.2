@@ -3,6 +3,10 @@
     position: relative;
     height: 100vh;
     overflow: hidden;
+    @media (max-width:768px) {
+        height: auto;
+        padding-bottom: 30px;
+    }
     &__container{
         height: 100%;
     }
@@ -12,6 +16,22 @@
         right: 100px;
         height: 920px;
         width: 750px;
+        @media (max-width:1920px) {
+            @include adaptiveValue("height", 920, 700, 1920, 1024);
+            @include adaptiveValue("width", 920, 700, 1920, 1024);
+            @include adaptiveValue("right", 100, 0, 1920, 1024);
+        }
+        @media (max-width:1024px) {
+            @include adaptiveValue("height", 700, 765, 1024, 992);
+            @include adaptiveValue("width", 700, 585, 1024, 992);
+            right: 0;
+        }
+        @media (max-width:992px) {
+            display: none;
+        }
+        img{
+            object-fit: contain;
+        }
     }
     &__body{
         position: relative;
@@ -21,6 +41,12 @@
     &__content{
         width: 730px;
         color: #ffff;
+        @media (max-width:1024px) {
+            @include adaptiveValue("width", 730, 600, 1024, 992);
+        }
+        @media (max-width:992px) {
+            width: 100%;
+        }
     }
     &__title{
         font-size: 100px;
@@ -30,11 +56,20 @@
         border-style: solid;
         border-color: #d7b633;
         border-left-width: 3px;
+        @media (max-width:1920px) {
+            @include adaptiveValue("font-size", 100, 80, 1920, 1024);
+        }
+        @media (max-width:1024px) {
+            @include adaptiveValue("font-size", 80, 38, 1024, 320);
+        }
     }
     &__text{
         margin-bottom: 45px;
         line-height: 1.8;
         font-size: 21px;
+        @media (max-width:1920px) {
+            @include adaptiveValue("font-size", 21, 18, 1920, 1024);
+        }
     }
     &__rewards{
         display: flex;
@@ -58,6 +93,9 @@
     &__body{
         display: flex;
         align-items: center;
+        @media (max-width:992px) {
+            flex-direction: column;
+        }
     }
     &__img{
         width: 542px;
@@ -71,6 +109,13 @@
     }
     &__content{
         padding-right: 70px;
+        @media (max-width:1920px) {
+            @include adaptiveValue("padding-right", 70, 0, 1920, 992);
+        }
+        @media (max-width:992px) {
+            padding-right: 0;
+            text-align: center;
+        }
     }
     &__title{
         margin-bottom: 30px;
@@ -89,7 +134,10 @@
     height: 743px;
     width: 100%;
     position: relative;
-
+    @media (max-width:576px) {
+        height: auto;
+        padding: 30px 0;
+    }
     &__container {
         height: 100%;
     }
@@ -97,7 +145,6 @@
     &__body {
         position: relative;
         height: 100%;
-        width: max-content;
         margin: 0 auto;
         display: flex;
         align-items: center;
@@ -106,6 +153,13 @@
     }
     &__wrapper{
         padding: 0 100px;
+        @media (max-width:992px) {
+            @include adaptiveValue("padding-left", 100, 0, 992, 768);
+            @include adaptiveValue("padding-right", 100, 0, 992, 768);
+        }
+        @media (max-width:768px) {
+            padding: 0px;
+        }
     }
 
 }
@@ -113,6 +167,9 @@
     width: 610px;
     text-align: center;
     overflow: hidden;
+    @media (max-width:768px) {
+        width: 100%;
+    }
     &__body {
         display: flex;
     }
@@ -275,6 +332,10 @@
     &__slider-wrapper{
         position: relative;
         padding: 0 100px;
+        @media (max-width:992px) {
+            @include adaptiveValue("padding-right", 100, 50, 992, 320);
+            @include adaptiveValue("padding-left", 100, 50, 992, 320);
+        }
     }
 
     &__slider {
@@ -318,6 +379,12 @@
         display: flex;
         align-items: center;
         padding-left: 135px;
+        @media (max-width:1920px) {
+            @include adaptiveValue("padding-left", 135, 0, 1920, 992);
+        }
+        @media (max-width:992px) {
+            padding-left: 0;
+        }
     }
 
     &__img {
@@ -325,6 +392,13 @@
         height: 800px;
         width: 535px;
         flex: 0 0 auto;
+        @media (max-width:1920px) {
+            @include adaptiveValue("height", 800, 500, 1920, 768);
+            @include adaptiveValue("width", 535, 360, 1920, 768);
+        }
+        @media (max-width:768px) {
+            display: none;
+        }
         img{
             height: 100%;
             width: 100%;
@@ -435,12 +509,18 @@
     }
 
     &__spoliers {
+        @media (max-width:900px) {
+            width: 100%;
+        }
     }
 
     &__img {
         height: 370px;
         width: 370px;
         flex: 0 0 auto;
+        @media (max-width:900px) {
+            display: none;
+        }
         img{
             height: 100%;
             width: 100%;
@@ -450,6 +530,9 @@
 }
 .spollers {
     width: 470px;
+    @media (max-width:900px) {
+        width: 100%;
+    }
     &__item {
     }
 
@@ -479,6 +562,10 @@
 .statistics {
     height: 536px;
     position: relative;
+    @media (max-width:768px) {
+        height: auto;
+        padding: 30px 0;
+    }
     &__container {
         height: 100%;
     }
@@ -490,6 +577,11 @@
         align-items: center;
         justify-content: space-between;
         color: #fff;
+        gap: 15px;
+        @media (max-width:768px) {
+            flex-wrap: wrap;
+            gap: 20px;
+        }
     }
 
     &__item {
@@ -502,6 +594,9 @@
         background: #ffff;
         color: #090909;
         line-height: 1.2;
+        @media (max-width:768px) {
+            flex: 1 1 auto;
+        }
     }
 
     &__title {
@@ -728,10 +823,16 @@
         display: flex;
         justify-content: center;
         gap: 75px;
+        @media (max-width:850px) {
+            flex-wrap:wrap ;
+        }
     }
 
     &__info {
         flex: 0 1 375px;
+        @media (max-width:850px) {
+            flex-basis: 100%;
+        }
     }
 
 
@@ -769,6 +870,9 @@
     &__form-body {
         width: 470px;
         flex: 0 0 auto;
+        @media (max-width:850px) {
+            flex-basis: 100%;
+        }
     }
 
     &__form {
@@ -797,5 +901,10 @@
     &__submit {
     }
 }
-
+.featured, .pricing, .other-books, .about-me, .answer-questions, .contacts{
+    @media (max-width:1920px) {
+        @include adaptiveValue("padding-top", 150, 30, 1920, 320);
+        @include adaptiveValue("padding-bottom", 150, 30, 1920, 320);
+    }
+}
 //====================================================================================================

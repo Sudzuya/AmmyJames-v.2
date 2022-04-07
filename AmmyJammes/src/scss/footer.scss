@@ -9,13 +9,16 @@
         align-items: center;
     }
     &__logo{
-        font-family: 'Satisfy';
+        font-family: 'Nexa Script';
         color: #ffffff;
         font-size: 30px;
         line-height: 1.2;
         margin-bottom: 30px;
         display: flex;
         align-items: center;
+        @media (max-width:576px) {
+            @include adaptiveValue("font-size", 30, 24, 576, 320);
+		}
         img{
             margin-right: 15px;
         }
