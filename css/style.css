@@ -848,6 +848,10 @@ html.loaded .subscribe__img img {
   margin-right: 50px;
 }
 
+.header__item:last-child {
+  cursor: pointer;
+}
+
 .header__item:last-child:hover .header__dropdown-list {
   display: -webkit-box;
   display: -ms-flexbox;
