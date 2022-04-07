@@ -1,0 +1,32 @@
+//====================================================================================================
+.footer{
+    background: #2c2c2b;
+    padding: 45px 0;
+    &__body{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    &__logo{
+        font-family: 'Satisfy';
+        color: #ffffff;
+        font-size: 30px;
+        line-height: 1.2;
+        margin-bottom: 30px;
+        display: flex;
+        align-items: center;
+        img{
+            margin-right: 15px;
+        }
+    }
+    &__social{
+        margin-bottom: 30px;
+    }
+    &__copiright{
+        color: #a7a5a5;
+        font-size: 19px;
+        line-height: 1.6;
+    }
+}
+//====================================================================================================
