@@ -47,6 +47,7 @@
 			margin-right: 50px;
 		}
 		&:last-child{
+			cursor: pointer;
 			&:hover{
 				.header__dropdown-list{
 					display: flex;

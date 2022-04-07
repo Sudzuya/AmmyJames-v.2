@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20220408002544">
+	<link rel="stylesheet" href="css/style.min.css?_v=20220408003736">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,31 +24,31 @@
 					<nav class="header__menu">
 						<ul class="header__list">
 							<li class="header__item">
-								<a href="#" data-goto=".other-books" class="header__link">Галерея</a>
+								<a href="#" data-goto-top="60" data-goto=".other-books" class="header__link">Галерея</a>
 							</li>
 							<li class="header__item">
-								<a href="#" data-goto=".pricing" class="header__link">Цена</a>
+								<a href="#" data-goto-top="60" data-goto=".pricing" class="header__link">Цена</a>
 							</li>
 							<li class="header__item">
-								<a href="#" data-goto=".contacts" class="header__link">Контакты</a>
+								<a href="#" data-goto-top="60" data-goto=".contacts" class="header__link">Контакты</a>
 							</li>
 							<li class="header__item">
-								<a href="#" class="header__link">Информация</a>
+								<a class="header__link">Информация</a>
 								<ul class="header__dropdown-list">
 									<li class="header__dropdown-item">
-										<a href="#" data-goto=".featured" class="header__dropdown-link">О книге</a>
+										<a href="#" data-goto-top="60" data-goto=".featured" class="header__dropdown-link">О книге</a>
 									</li>
 									<li class="header__dropdown-item">
-										<a href="#" data-goto=".publications" class="header__dropdown-link">Рецензия</a>
+										<a href="#" data-goto-top="60" data-goto=".publications" class="header__dropdown-link">Рецензия</a>
 									</li>
 									<li class="header__dropdown-item">
-										<a href="#" data-goto=".about-me" class="header__dropdown-link">Обо мне</a>
+										<a href="#" data-goto-top="60" data-goto=".about-me" class="header__dropdown-link">Обо мне</a>
 									</li>
 									<li class="header__dropdown-item">
-										<a href="#" data-goto=".answer-questions" class="header__dropdown-link">Вопросы о книге</a>
+										<a href="#" data-goto-top="60" data-goto=".answer-questions" class="header__dropdown-link">Вопросы о книге</a>
 									</li>
 									<li class="header__dropdown-item">
-										<a href="#" data-goto=".statistics" class="header__dropdown-link">Содержание</a>
+										<a href="#" data-goto-top="60" data-goto=".statistics" class="header__dropdown-link">Содержание</a>
 									</li>
 								</ul>
 							</li>
@@ -459,10 +459,10 @@
 		<footer class="footer">
 			<div class="footer__container">
 				<div class="footer__body">
-					<div class="footer__logo">
+					<a href="#" data-goto=".first-block" class="footer__logo">
 						<picture><source srcset="img/logo.webp" type="image/webp"><img src="img/logo.png" alt=""></picture>
 						<span>Елена Пябус</span>
-					</div>
+					</a>
 					<div class="footer__social socail">
 						<a href="#" class="footer__social-link socail">
 							<img src="img/twitterColor.svg" alt="">
@@ -601,7 +601,7 @@
 		</svg>
 	</div>
 </div> -->
-	<script src="js/app.min.js?_v=20220408002544"></script>
+	<script src="js/app.min.js?_v=20220408003736"></script>
 </body>
 
 </html>
