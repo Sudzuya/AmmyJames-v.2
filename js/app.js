@@ -3706,7 +3706,7 @@
     Alllink.forEach((function(e) {
         if ("Информация" !== e.innerText) e.addEventListener("click", (function(item) {
             document.body.classList.remove("open");
-            dropDownMenu.classList.remove("drop-open");
+            if (dropDownMenu.classList.contains("drop-open")) dropDownMenu.classList.remove("drop-open");
         }));
         if ("Информация" == e.innerText) e.addEventListener("click", (function() {
             e.classList.toggle("open");
