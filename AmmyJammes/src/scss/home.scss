@@ -174,7 +174,9 @@
     }
     .spollers__publications-title{
         position: relative;
-        margin-bottom: 10px;
+        @media (max-width:768px) {
+            pointer-events: none;
+        }
         &::before{
             content:"";
             position: absolute;
@@ -185,12 +187,24 @@
             width: 20px;
             background-image: url('../img/arrowDown.svg');
             transition: all .5s ease;
+            @media (max-width:768px) {
+                display: none;
+            }
         }
     }
     ._spoller-active{
         &::before{
             left: 47%;
             transform: rotate(180deg);
+        }
+    }
+    .spollers__body{
+        height: 80px;
+        overflow: hidden;
+        transition: height .5s ease;
+        margin-bottom: 10px;
+        @media (max-width:768px) {
+            height: auto;
         }
     }
 }
