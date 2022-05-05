@@ -1343,6 +1343,7 @@
     const events_emitter = {
         on(events, handler, priority) {
             const self = this;
+            if (!self.eventsListeners || self.destroyed) return self;
             if ("function" !== typeof handler) return self;
             const method = priority ? "unshift" : "push";
             events.split(" ").forEach((event => {
@@ -1353,6 +1354,7 @@
         },
         once(events, handler, priority) {
             const self = this;
+            if (!self.eventsListeners || self.destroyed) return self;
             if ("function" !== typeof handler) return self;
             function onceHandler() {
                 self.off(events, onceHandler);
@@ -1365,6 +1367,7 @@
         },
         onAny(handler, priority) {
             const self = this;
+            if (!self.eventsListeners || self.destroyed) return self;
             if ("function" !== typeof handler) return self;
             const method = priority ? "unshift" : "push";
             if (self.eventsAnyListeners.indexOf(handler) < 0) self.eventsAnyListeners[method](handler);
@@ -1372,6 +1375,7 @@
         },
         offAny(handler) {
             const self = this;
+            if (!self.eventsListeners || self.destroyed) return self;
             if (!self.eventsAnyListeners) return self;
             const index = self.eventsAnyListeners.indexOf(handler);
             if (index >= 0) self.eventsAnyListeners.splice(index, 1);
@@ -1379,6 +1383,7 @@
         },
         off(events, handler) {
             const self = this;
+            if (!self.eventsListeners || self.destroyed) return self;
             if (!self.eventsListeners) return self;
             events.split(" ").forEach((event => {
                 if ("undefined" === typeof handler) self.eventsListeners[event] = []; else if (self.eventsListeners[event]) self.eventsListeners[event].forEach(((eventHandler, index) => {
@@ -1389,6 +1394,7 @@
         },
         emit() {
             const self = this;
+            if (!self.eventsListeners || self.destroyed) return self;
             if (!self.eventsListeners) return self;
             let events;
             let data;
@@ -2270,8 +2276,6 @@
         if (swiper.support.touch || !swiper.params.simulateTouch || swiper.params.watchOverflow && swiper.isLocked || swiper.params.cssMode) return;
         const el = "container" === swiper.params.touchEventsTarget ? swiper.el : swiper.wrapperEl;
         el.style.cursor = "move";
-        el.style.cursor = moving ? "-webkit-grabbing" : "-webkit-grab";
-        el.style.cursor = moving ? "-moz-grabbin" : "-moz-grab";
         el.style.cursor = moving ? "grabbing" : "grab";
     }
     function unsetGrabCursor() {
@@ -2594,7 +2598,7 @@
         if (!enabled) return;
         swiper.previousTranslate = swiper.translate;
         if (swiper.isHorizontal()) swiper.translate = -wrapperEl.scrollLeft; else swiper.translate = -wrapperEl.scrollTop;
-        if (-0 === swiper.translate) swiper.translate = 0;
+        if (0 === swiper.translate) swiper.translate = 0;
         swiper.updateActiveIndex();
         swiper.updateSlidesClasses();
         let newProgress;
@@ -2762,6 +2766,8 @@
             "css-mode": params.cssMode
         }, {
             centered: params.cssMode && params.centeredSlides
+        }, {
+            "watch-progress": params.watchSlidesProgress
         } ], params.containerModifierClass);
         classNames.push(...suffixes);
         $el.addClass([ ...classNames ].join(" "));
@@ -3119,6 +3125,7 @@
         }
         getSlideClasses(slideEl) {
             const swiper = this;
+            if (swiper.destroyed) return "";
             return slideEl.className.split(" ").filter((className => 0 === className.indexOf("swiper-slide") || 0 === className.indexOf(swiper.params.slideClass))).join(" ");
         }
         emitSlidesClasses() {
@@ -3712,6 +3719,15 @@
             e.classList.toggle("open");
             dropDownMenu.classList.toggle("drop-open");
         }));
+    }));
+    let reviews = document.querySelector(".publications .spollers__publications-title");
+    reviews.addEventListener("click", (function(e) {
+        reviews.classList.toggle("_spoller-active");
+        document.querySelector(".spollers-publications").classList.toggle("active");
+        if (document.querySelector(".spollers-publications").classList.contains("active")) {
+            console.log("da");
+            document.querySelector(".publications .spollers__body").style.height = "300px";
+        } else document.querySelector(".publications .spollers__body").style.height = "80px";
     }));
     window["FLS"] = true;
     isWebp();
