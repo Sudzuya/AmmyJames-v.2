@@ -72,10 +72,4 @@ let reviews = document.querySelector('.publications .spollers__publications-titl
 reviews.addEventListener('click', function(e){
   reviews.classList.toggle('_spoller-active')
   document.querySelector('.spollers-publications').classList.toggle('active')
-  if (document.querySelector('.spollers-publications').classList.contains('active')){
-    console.log('da');
-    document.querySelector('.publications .spollers__body').style.height = '3000px';
-  } else {
-    document.querySelector('.publications .spollers__body').style.height = '80px';
-  }
 })
